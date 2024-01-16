@@ -13,11 +13,11 @@ import {
   savePhotoController,
   updateAdminLocation ,
   getCurrentLocation,
-  getDirectionsToAdminLocation,
+ 
   getUserDetailsById,
   
 } from "../contrallers/authContraller.js";
-import { requireAuth } from "../middlewares/authMiddleware.js";
+
 import { isAdmin,requireSignIn } from "../middlewares/authMiddleware.js";
 
 
@@ -84,9 +84,7 @@ router.put("/admin/update-location", updateAdminLocation);
 router.get("/user/current-location", getCurrentLocation);
 
 // Create a route for users to get directions to the admin's location
-router.get("/user/directions-to-admin", getDirectionsToAdminLocation);
 
-router.get("/get-directions", requireAuth, getDirectionsToAdminLocation);
 
 router.get("/get-user-details-by-id/:userId", getUserDetailsById);
 
